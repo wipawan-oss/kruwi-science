@@ -1,0 +1,19 @@
+{
+  "name": "ครูวิ สอนวิทย์",
+  "short_name": "ครูวิ",
+  "description": "เรียนรู้วิทยาศาสตร์ ม.1–ม.3 และติว O-NET ม.3",
+  "lang": "th",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0b1933",
+  "icons": [
+    {
+      "src": "/logo-emblem.webp",
+      "sizes": "96x96",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
