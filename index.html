@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1933">
+  <meta name="description" content="ครูวิ สอนวิทย์ เว็บไซต์เรียนรู้วิทยาศาสตร์ ม.1–ม.3 พร้อมบทเรียน ห้องทดลอง แบบทดสอบ ติว O-NET ม.3 และใบงาน">
+  <meta property="og:title" content="ครูวิ สอนวิทย์ | สนุกคิด สนุกทดลอง">
+  <meta property="og:description" content="ห้องเรียนวิทยาศาสตร์ออนไลน์ เรียนง่าย เข้าใจจริง ทดลองได้ทุกวัน">
+  <title>ครูวิ สอนวิทย์ | สนุกคิด สนุกทดลอง</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="onet.css">
+  <script defer src="app.js"></script>
+  <script defer src="onet-bank.js"></script>
+  <script defer src="onet.js"></script>
+</head>
+<body>
+  <!-- SVG icons supplied locally to keep the website usable without an icon service. -->
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-atom" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1.7" fill="currentColor" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.1" fill="none" stroke="currentColor" stroke-width="1.7"/><ellipse cx="12" cy="12" rx="10" ry="4.1" transform="rotate(60 12 12)" fill="none" stroke="currentColor" stroke-width="1.7"/><ellipse cx="12" cy="12" rx="10" ry="4.1" transform="rotate(-60 12 12)" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6.5C9 4.8 5.6 4.8 2 5.5v13c3.7-.7 7-.7 10 1.2 3-1.9 6.3-1.9 10-1.2v-13c-3.6-.7-7-.7-10 1zM12 6.5v13.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v7L4.5 19a1.6 1.6 0 0 0 1.4 2.4h12.2a1.6 1.6 0 0 0 1.4-2.4L14 10V3M8 15h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5m0-14.2-1.5 1.5M6.4 17.6l-1.5 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20.5 14.8A8.7 8.7 0 0 1 9.2 3.5 8.7 8.7 0 1 0 20.5 14.8z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 2.7 2.9 6.1 6.7 1-4.8 4.7 1.1 6.8-5.9-3.2-5.9 3.2 1.1-6.8-4.8-4.7 6.7-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="icon-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 17H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6zM17.5 11h.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 2 2.1 7.9L22 12l-7.9 2.1L12 22l-2.1-7.9L2 12l7.9-2.1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <div class="announcement"><span class="tiny-spark">✦</span> พื้นที่เรียนรู้สำหรับเด็ก ๆ ที่อยากค้นพบโลกวิทยาศาสตร์ <span class="tiny-spark">✦</span></div>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="ครูวิ สอนวิทย์ หน้าแรก">
+        <span class="brand-mark"><svg class="i"><use href="#icon-atom"/></svg></span>
+        <span class="brand-copy"><strong>ครูวิ <span>สอนวิทย์</span></strong><small>KRU WI SCIENCE LAB</small></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a href="#home" class="nav-link is-active">หน้าแรก</a>
+        <a href="#lessons" class="nav-link">บทเรียน</a>
+        <a href="#lab" class="nav-link">ห้องทดลอง</a>
+        <a href="#quiz" class="nav-link">แบบทดสอบ</a>
+        <a href="#onet" class="nav-link nav-onet">🎯 ติว O-NET ม.3</a>
+        <a href="#worksheets" class="nav-link">ใบงาน</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" id="themeToggle" class="icon-button theme-button" aria-label="เปลี่ยนโหมดสี" title="เปลี่ยนโหมดสี"><svg class="i"><use href="#icon-moon"/></svg></button>
+        <a href="#lessons" class="header-cta">เริ่มเรียน <svg class="i"><use href="#icon-arrow"/></svg></a>
+        <button type="button" id="menuToggle" class="icon-button mobile-menu-button" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="mainNav"><svg class="i"><use href="#icon-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-anchor">
+      <div class="hero-noise"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span> ห้องเรียนวิทยาศาสตร์ออนไลน์</div>
+          <h1>วิทยาศาสตร์<br>ไม่ยากอย่างที่<span class="highlight-text">คิด<span class="under-swoosh"></span></span><span class="heading-dot">.</span></h1>
+          <p class="hero-description">สนุกคิด สนุกทดลอง ค้นหาคำตอบไปด้วยกันกับ <strong>“ครูวิ สอนวิทย์”</strong> เรียนรู้อย่างเข้าใจ ผ่านบทเรียน กิจกรรม และเกมคำถามที่ใครก็เรียนได้</p>
+          <div class="hero-buttons"><a class="btn btn-lime" href="#lessons">สำรวจบทเรียน <svg class="i"><use href="#icon-arrow"/></svg></a><a class="btn btn-outline-light" href="#onet">🎯 ติว O-NET ม.3</a></div>
+          <div class="hero-social-proof"><div class="mini-avatars"><span>⚗️</span><span>🧬</span><span>🔭</span></div><div><strong>วิทย์สนุกได้ทุกวัน</strong><small>เริ่มต้นด้วยความสงสัย แล้วไปหาคำตอบกัน!</small></div></div>
+        </div>
+        <div class="hero-art" role="img" aria-label="ภาพประกอบขวดทดลองวิทยาศาสตร์ กล้องจุลทรรศน์ และวงโคจรอะตอม">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="floating-label float-a"><span class="label-icon">✧</span> WOW! SCIENCE</div>
+          <div class="floating-label float-b">🧪 <span>เรียนรู้ผ่านการทดลอง</span></div>
+          <div class="hero-illustration">
+            <svg viewBox="0 0 560 490" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="liquid" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a3f56a"/><stop offset="1" stop-color="#4fddbd"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#defff2" stop-opacity=".7"/><stop offset="1" stop-color="#c2f9e5" stop-opacity=".08"/></linearGradient><linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d2b5ff"/><stop offset="1" stop-color="#8b7bfa"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="13"/></filter></defs>
+              <ellipse cx="277" cy="412" rx="179" ry="23" fill="#09152c" opacity=".55"/>
+              <circle cx="283" cy="228" r="174" fill="#5e73be" opacity=".13"/><circle cx="283" cy="228" r="139" fill="none" stroke="#aac6fc" stroke-opacity=".17" stroke-dasharray="7 9" stroke-width="2"/>
+              <g transform="translate(38 12) rotate(-14 80 125)"><ellipse cx="80" cy="114" rx="59" ry="23" fill="none" stroke="#95f7d2" stroke-width="4" opacity=".95"/><ellipse cx="80" cy="114" rx="59" ry="23" transform="rotate(60 80 114)" fill="none" stroke="#95f7d2" stroke-width="4" opacity=".95"/><ellipse cx="80" cy="114" rx="59" ry="23" transform="rotate(-60 80 114)" fill="none" stroke="#95f7d2" stroke-width="4" opacity=".95"/><circle cx="80" cy="114" r="9" fill="#dcff82"/><circle cx="139" cy="114" r="6" fill="#ffffff"/></g>
+              <g transform="translate(303 18)"><circle cx="101" cy="104" r="43" fill="#846ff8" opacity=".65"/><circle cx="101" cy="104" r="23" fill="#b6a6ff" opacity=".38"/><circle cx="101" cy="104" r="9" fill="#e6deff"/><circle cx="52" cy="64" r="10" fill="#f8a6b6"/><circle cx="160" cy="63" r="6" fill="#a4f4d6"/><path d="M52 64 101 104 160 63" stroke="white" stroke-opacity=".45" stroke-width="3" stroke-dasharray="5 9" fill="none"/></g>
+              <g transform="translate(120 65)"><path d="M118 48h90v18h-24v110l105 147c15 21 1 45-24 45H61c-25 0-39-24-24-45l105-147V66h-24z" fill="url(#glass)" stroke="#ddffed" stroke-width="9" stroke-linejoin="round"/><path d="M110 239c40-9 78 17 119 4l60 80c15 21 1 45-24 45H61c-25 0-39-24-24-45z" fill="url(#liquid)"/><path d="M110 239c40-9 78 17 119 4" fill="none" stroke="#d1ff9d" stroke-width="7" stroke-linecap="round"/><path d="M143 80v94L49 309" fill="none" stroke="white" stroke-opacity=".28" stroke-width="11" stroke-linecap="round"/><circle cx="112" cy="285" r="12" fill="#ecffbf" opacity=".6"/><circle cx="203" cy="309" r="17" fill="#eaffc0" opacity=".65"/><circle cx="168" cy="264" r="7" fill="#f1ffcd" opacity=".8"/><circle cx="163" cy="215" r="13" fill="none" stroke="#b5ffec" stroke-width="4"/><circle cx="209" cy="181" r="8" fill="none" stroke="#e1ffb9" stroke-width="3"/><circle cx="137" cy="123" r="5" fill="#b6ffcc"/><path d="M118 48h90" stroke="#ddffed" stroke-width="9" stroke-linecap="round"/></g>
+              <g transform="translate(18 305) rotate(-14 67 60)"><rect x="19" y="13" width="96" height="102" rx="22" fill="url(#purple)"/><rect x="33" y="25" width="68" height="74" rx="14" fill="#6e5bc0"/><path d="M47 54h42M47 72h25" stroke="#f0eaff" stroke-width="7" stroke-linecap="round"/><rect x="50" y="3" width="34" height="18" rx="5" fill="#c1b3ff"/></g>
+              <g transform="translate(417 286) rotate(14 50 70)"><rect x="18" y="1" width="53" height="91" rx="9" fill="#f8adbe"/><rect x="10" y="78" width="69" height="20" rx="9" fill="#e8849f"/><rect x="18" y="89" width="17" height="45" rx="8" fill="#f8adbe"/><rect x="4" y="120" width="90" height="19" rx="10" fill="#f8adbe"/><circle cx="46" cy="42" r="12" fill="#fff1f0"/><path d="M46 23v38M27 42h38" stroke="#dc7d9e" stroke-width="3" opacity=".7"/></g>
+              <g fill="#deff90"><path d="m46 260 5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/><path d="m458 170 5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/></g><circle cx="464" cy="246" r="8" fill="#c4aaff"/><circle cx="100" cy="205" r="8" fill="#f8a7bd"/><circle cx="476" cy="100" r="5" fill="#e4ffac"/>
+            </svg>
+          </div>
+          <div class="hero-art-caption"><span class="caption-emoji">💡</span><span><strong>SCIENCE IS FUN!</strong><small>มาค้นพบสิ่งมหัศจรรย์รอบตัว</small></span></div>
+        </div>
+      </div>
+      <div class="hero-bottom-curve"></div>
+    </section>
+
+    <section class="container stats-wrap" aria-label="ข้อมูลเว็บไซต์">
+      <div class="stats-strip">
+        <div class="stat-item"><div class="stat-icon stat-lime"><svg class="i"><use href="#icon-book"/></svg></div><div><strong>9 <span>บทเรียน</span></strong><small>เนื้อหาพร้อมเรียนรู้</small></div></div>
+        <div class="stat-item"><div class="stat-icon stat-purple">🎓</div><div><strong>3 <span>ระดับชั้น</span></strong><small>มัธยมศึกษาปีที่ 1–3</small></div></div>
+        <div class="stat-item"><div class="stat-icon stat-peach"><svg class="i"><use href="#icon-flask"/></svg></div><div><strong>3 <span>การทดลอง</span></strong><small>ลงมือทำได้จริง</small></div></div>
+        <div class="stat-item"><div class="stat-icon stat-blue"><svg class="i"><use href="#icon-star"/></svg></div><div><strong id="completedCount">0 <span>/ 9</span></strong><small>บทเรียนที่เรียนจบแล้ว</small></div></div>
+      </div>
+    </section>
+
+    <section class="section section-features">
+      <div class="container"><div class="section-head center"><div class="eyebrow eyebrow-center">WHY LEARN WITH US? <span>✳</span></div><h2>เรียนวิทย์ให้<span class="text-lime-on-light">ว้าว!</span> ไปด้วยกัน</h2><p>ทุกความสงสัยคือจุดเริ่มต้นของการเรียนรู้ที่สนุก</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-emoji f-1">📚</div><h3>บทเรียนเข้าใจง่าย</h3><p>สรุปประเด็นสำคัญ พร้อมตัวอย่างที่เชื่อมโยงกับชีวิตประจำวัน</p></article>
+        <article class="feature-card"><div class="feature-emoji f-2">🔬</div><h3>ทดลองด้วยตัวเอง</h3><p>ฝึกคิดแบบนักวิทยาศาสตร์ด้วยกิจกรรมสนุก ๆ และห้องทดลองเสมือน</p></article>
+        <article class="feature-card"><div class="feature-emoji f-3">🏆</div><h3>ท้าทายความรู้</h3><p>เล่นแบบทดสอบพร้อมเฉลย เก็บคะแนนสูงสุด และติดตามความก้าวหน้า</p></article>
+      </div></div>
+    </section>
+
+    <section id="lessons" class="section section-lessons section-anchor">
+      <div class="container">
+        <div class="section-head split-head"><div><div class="eyebrow">EXPLORE & LEARN <span>✳</span></div><h2>คลังบทเรียน<span class="title-dot">.</span></h2><p>เลือกหัวข้อที่สนใจ แล้วเริ่มสนุกไปกับการค้นพบ</p></div><div class="section-head-decoration">🪐</div></div>
+        <div class="lesson-toolbar"><div class="filter-pills" role="group" aria-label="กรองบทเรียนตามระดับชั้น"><button class="filter-pill active" type="button" data-grade="all" aria-pressed="true">ทั้งหมด <span>9</span></button><button class="filter-pill" type="button" data-grade="1" aria-pressed="false">ม.1</button><button class="filter-pill" type="button" data-grade="2" aria-pressed="false">ม.2</button><button class="filter-pill" type="button" data-grade="3" aria-pressed="false">ม.3</button></div><label class="search-box"><svg class="i"><use href="#icon-search"/></svg><input id="lessonSearch" type="search" placeholder="ค้นหาบทเรียน..." autocomplete="off" aria-label="ค้นหาบทเรียน"></label></div>
+        <div id="lessonGrid" class="lesson-grid" aria-live="polite"></div><div id="noLessons" class="empty-state" hidden>🔎 ไม่พบบทเรียนที่ค้นหา ลองใช้คำค้นอื่นดูนะ</div>
+      </div>
+    </section>
+
+    <section id="lab" class="section section-lab section-anchor">
+      <div class="container"><div class="section-head split-head"><div><div class="eyebrow">LET'S EXPERIMENT <span>✳</span></div><h2>ห้องทดลอง<span class="title-dot">.</span></h2><p>เปลี่ยนความสงสัยให้เป็นการค้นพบ เริ่มด้วยกิจกรรมง่าย ๆ</p></div><div class="section-head-decoration">🧪</div></div>
+        <div class="lab-grid">
+          <article class="lab-card lab-card-main"><div class="lab-card-top"><span class="pill-soft">🔮 ห้องทดลองเสมือน</span><span class="small-muted">INTERACTIVE LAB</span></div><h3>เมื่ออุณหภูมิเปลี่ยน...<br>น้ำจะเป็นอย่างไร?</h3><p>เลื่อนตัวปรับอุณหภูมิ แล้วสังเกตสถานะของน้ำแบบเรียลไทม์</p>
+            <div class="simulator"><div class="sim-visual" id="simVisual"><div class="sim-bubbles"><i></i><i></i><i></i><i></i></div><div class="sim-cup"><div class="sim-liquid"></div><div class="sim-ice">❄</div><div class="sim-vapor">♨</div></div></div>
+              <div class="sim-controls"><div class="sim-temp-label"><span>อุณหภูมิ</span><strong><span id="temperatureValue">25</span>°C</strong></div><input id="temperatureSlider" type="range" min="-20" max="130" step="1" value="25" aria-label="ปรับอุณหภูมิของน้ำ"><div class="temp-legend"><span>−20°C</span><span>130°C</span></div><div class="sim-state"><span class="state-dot"></span><strong id="waterState">ของเหลว</strong></div><p id="waterExplanation" class="sim-description">ที่ 25°C น้ำอยู่ในสถานะของเหลว ไหลและเปลี่ยนรูปร่างตามภาชนะ</p></div>
+            </div><div class="sim-footnote">* แบบจำลองอย่างง่ายของน้ำบริสุทธิ์ที่ความดันบรรยากาศปกติ</div></article>
+          <div class="lab-small-grid" id="experimentGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="section section-quiz section-anchor"><div class="container"><div class="quiz-panel"><div class="quiz-panel-deco d1"></div><div class="quiz-panel-deco d2"></div><div class="quiz-copy"><div class="eyebrow hero-eyebrow">READY FOR A CHALLENGE? <span>✳</span></div><h2>เก่งวิทย์<br><em>ลองมาวัดกัน!</em></h2><p>แบบทดสอบปรนัยระดับชั้นละ 5 ข้อ ตรวจคำตอบทันที พร้อมคำอธิบายและบันทึกคะแนนสูงสุดไว้ในเครื่องนี้</p><div class="quiz-motivation">⭐ เรียนรู้จากทุกคำตอบ แม้ตอบผิดก็เก่งขึ้นได้</div></div><div class="quiz-choice-area"><p class="quiz-choice-heading">เลือกระดับชั้นเพื่อเริ่มทำแบบทดสอบ</p><div class="quiz-levels" id="quizLevels"><button class="quiz-level" data-quiz="1" type="button"><span class="quiz-level-icon">🌱</span><span><strong>วิทยาศาสตร์ ม.1</strong><small>สาร เซลล์ และพืช</small></span><svg class="i"><use href="#icon-arrow"/></svg></button><button class="quiz-level" data-quiz="2" type="button"><span class="quiz-level-icon">🫁</span><span><strong>วิทยาศาสตร์ ม.2</strong><small>ร่างกายและการแยกสาร</small></span><svg class="i"><use href="#icon-arrow"/></svg></button><button class="quiz-level" data-quiz="3" type="button"><span class="quiz-level-icon">🧬</span><span><strong>วิทยาศาสตร์ ม.3</strong><small>พันธุศาสตร์ เคมี และอวกาศ</small></span><svg class="i"><use href="#icon-arrow"/></svg></button></div></div></div></div></section>
+
+
+    <section id="onet" class="section section-onet section-anchor" aria-labelledby="onet-heading">
+      <div class="container">
+        <div class="onet-spotlight">
+          <div class="onet-spotlight-copy">
+            <div class="onet-eyebrow">🎯 O-NET PREP ZONE · SCIENCE</div>
+            <h2 id="onet-heading">ติวให้มั่นใจ <span>O-NET ม.3</span></h2>
+            <p>ทบทวนวิทยาศาสตร์ ม.ต้น ผ่านโจทย์ฝึกคิด พร้อมเฉลยเข้าใจง่าย เลือกฝึกแยกสาระ หรือจับเวลาซ้อมก่อนลงสนามสอบจริง</p>
+            <div class="onet-quick-facts"><span>🧬 4 สาระ</span><span>📚 <strong id="onetBankCount">48</strong> ข้อในคลัง</span><span>⏱️ โหมดจับเวลา</span></div>
+          </div>
+          <div class="onet-target-art" aria-hidden="true"><span class="onet-orbit orbit-big"></span><span class="onet-orbit orbit-small"></span><span class="onet-rocket">🚀</span><span class="onet-main-target">🎯</span><span class="onet-star">✦</span></div>
+        </div>
+
+        <div id="onetSetup" class="onet-layout">
+          <div class="onet-setup-card">
+            <div class="onet-card-kicker">01 / เลือกรูปแบบการฝึก</div>
+            <h3>พร้อมลุยโจทย์แล้วหรือยัง?</h3>
+            <p class="onet-muted">เลือกวิธีฝึกที่เหมาะกับตัวเอง แบบฝึกหัดทั้งหมดสร้างเพื่อการทบทวน ไม่ใช่ข้อสอบจริงจาก สทศ.</p>
+            <div class="onet-mode-grid" id="onetModes" role="group" aria-label="เลือกรูปแบบการติว">
+              <button type="button" data-mode="practice" class="onet-mode active" aria-pressed="true"><span class="onet-mode-icon">📖</span><span class="onet-mode-text"><strong>ฝึกทีละข้อ</strong><small>ตอบแล้วรู้ผล พร้อมอ่านเฉลยทันที</small></span><span class="onet-mode-check">✓</span></button>
+              <button type="button" data-mode="mock" class="onet-mode" aria-pressed="false"><span class="onet-mode-icon">⏱️</span><span class="onet-mode-text"><strong>จำลองสนามสอบ</strong><small>20 ข้อ · 40 นาที · เฉลยหลังส่ง</small></span><span class="onet-mode-check">✓</span></button>
+            </div>
+            <div class="onet-topic-head"><div class="onet-card-kicker">02 / เลือกสาระที่ต้องการติว</div><small>ในโหมดจำลองสอบจะใช้ทุกสาระ</small></div>
+            <div id="onetTopics" class="onet-topic-list" role="group" aria-label="เลือกสาระการเรียนรู้"></div>
+            <div class="onet-mode-summary"><span>✳</span><span id="onetModeInfo">ฝึกทุกสาระ 8 ข้อ หรือเลือกเฉพาะสาระ 6 ข้อ · เฉลยทันทีหลังตอบ</span></div>
+            <button id="onetStart" type="button" class="onet-start">เริ่มฝึกทำโจทย์ <span aria-hidden="true">→</span></button>
+          </div>
+          <aside class="onet-dashboard" aria-label="สถิติการฝึก O-NET ม.3">
+            <div class="onet-card-kicker">YOUR LEARNING JOURNEY</div><h3>สถิติการติวของฉัน 📊</h3>
+            <div class="onet-stat-grid"><div class="onet-stat"><span>ทำชุดฝึกแล้ว</span><strong id="onetAttempts">0</strong><small>ครั้ง</small></div><div class="onet-stat"><span>คะแนนดีที่สุด</span><strong id="onetBest">—</strong></div><div class="onet-stat"><span>ผลครั้งล่าสุด</span><strong id="onetLast">—</strong></div></div>
+            <div class="onet-secondary-metrics"><span>ความแม่นยำรวม <strong id="onetAverage">—</strong></span><span>จำนวนข้อที่ฝึก <strong id="onetSolved">0</strong></span></div><div class="onet-achievement"><span>ระดับนักสำรวจ</span><strong id="onetBadge">🌱 Beginner</strong></div><h4>ความแม่นยำรายสาระ</h4><div id="onetStrengths"></div><p id="onetAdvice" class="onet-advice"></p><h4>แนวโน้มคะแนน 8 ครั้งล่าสุด</h4><div class="onet-history-trend" id="onetTrend"></div><h4>ประวัติคะแนนล่าสุด</h4><div id="onetHistory" class="onet-history" aria-live="polite"></div><div class="onet-history-actions"><button type="button" id="onetExport">⬇ ส่งออกผล CSV</button><button type="button" id="onetClearHistory">ล้างประวัติ</button></div>
+            <div class="onet-privacy-note">🔒 คะแนนบันทึกไว้ในเบราว์เซอร์ของเครื่องนี้เท่านั้น ไม่ส่งข้อมูลนักเรียนไปยังเซิร์ฟเวอร์</div>
+            <a class="onet-official-link" href="https://www.niets.or.th/th/catalog/view/213" target="_blank" rel="noopener noreferrer">ดูผังข้อสอบ O-NET ม.3 ปีการศึกษา 2569 จาก สทศ. ↗</a>
+          </aside>
+        </div>
+
+        <div id="onetTest" class="onet-test" hidden>
+          <div class="onet-test-bar"><div><span class="onet-card-kicker" id="onetQuestionGrade">O-NET ม.3</span><div class="onet-test-status"><strong id="onetQuestionProgress">ข้อ 1 จาก 20</strong><span id="onetAnsweredCount">ตอบแล้ว 0/20 ข้อ</span></div></div><div id="onetTimerWrap" class="onet-timer" hidden><span>⏱️ เวลาคงเหลือ</span><strong id="onetTime">40:00</strong></div><button id="onetQuit" type="button" class="onet-quit">ออกจากชุดฝึก ×</button></div>
+          <div class="onet-progress"><span id="onetProgressFill"></span></div>
+          <div class="onet-question-card"><span class="onet-question-topic" id="onetQuestionTopic">🧬 วิทยาศาสตร์ชีวภาพ</span><h3 id="onetQuestionTitle"></h3><div id="onetOptions" class="onet-options" role="group" aria-label="ตัวเลือกคำตอบ"></div><div id="onetAnswerBox" class="onet-explanation" hidden aria-live="polite"></div>
+            <div class="onet-question-actions"><button id="onetBack" type="button" class="onet-secondary-btn">← ข้อก่อนหน้า</button><button id="onetNext" type="button" class="onet-primary-btn">ข้อต่อไป →</button></div>
+          </div>
+          <div class="onet-nav-wrap"><span>เลือกไปยังข้อที่ต้องการ</span><div id="onetNavigator" class="onet-navigator" aria-label="หมายเลขข้อสอบ"></div></div>
+        </div>
+
+        <div id="onetResult" class="onet-results" hidden aria-live="polite">
+          <div class="onet-result-card"><div class="onet-result-emoji" id="onetResultEmoji">🏆</div><span class="onet-card-kicker">MISSION COMPLETE</span><h3>ทำชุดฝึกสำเร็จ!</h3><div class="onet-score-line"><strong id="onetScore">0/20</strong><span id="onetPercent">0%</span></div><p id="onetResultDescription"></p><div class="onet-elapsed" id="onetElapsed"></div><div class="onet-result-actions"><button id="onetTryAgain" type="button" class="onet-primary-btn">🔄 ลองชุดใหม่</button><button id="onetBackToSetup" type="button" class="onet-secondary-btn">เปลี่ยนโหมดฝึก</button></div></div>
+          <div class="onet-results-two"><div class="onet-result-panel"><h4>📊 วิเคราะห์คะแนนตามสาระ</h4><div id="onetTopicReport" class="onet-topic-report"></div></div><div class="onet-result-panel"><h4>📝 ตรวจคำตอบและเฉลยทุกข้อ</h4><div id="onetReview" class="onet-review"></div></div></div>
+        </div>
+        <p class="onet-disclaimer">* ชุดฝึกจัดทำขึ้นใหม่เพื่อการเรียนรู้ รูปแบบและระยะเวลาของโหมดจำลองเป็นการกำหนดเพื่อฝึกทักษะ ไม่ใช่การรับรองว่าตรงกับรูปแบบหรือเวลาสอบจริงของ สทศ.</p>
+      </div>
+    </section>
+
+    <section id="worksheets" class="section section-worksheets section-anchor"><div class="container"><div class="section-head split-head"><div><div class="eyebrow">PRINT & PRACTICE <span>✳</span></div><h2>ใบงานพร้อมใช้<span class="title-dot">.</span></h2><p>ฝึกคิด ฝึกเขียน ทบทวนความรู้ ดาวน์โหลดหรือพิมพ์บนกระดาษ A4 ได้เลย</p></div><div class="section-head-decoration">📝</div></div><div id="worksheetGrid" class="worksheet-grid"></div><div class="worksheet-note"><svg class="i"><use href="#icon-spark"/></svg> ใบงานจัดทำเป็นตัวอย่างเพื่อฝึกทบทวน สามารถบันทึกเป็น PDF ผ่านคำสั่งพิมพ์ของเบราว์เซอร์ได้</div></div></section>
+
+    <section class="closing-banner"><div class="container"><div class="closing-inner"><div class="closing-emoji">🚀</div><div><span class="closing-overline">STAY CURIOUS, KEEP EXPLORING</span><h2>ทุกคำถาม มีการค้นพบรออยู่!</h2><p>วันนี้ลองเรียนรู้อะไรใหม่ ๆ ไปกับครูวิกันนะ</p></div><a class="btn btn-dark" href="#lessons">ไปเรียนกันเลย <svg class="i"><use href="#icon-arrow"/></svg></a></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="#home"><span class="brand-mark"><svg class="i"><use href="#icon-atom"/></svg></span><span class="brand-copy"><strong>ครูวิ <span>สอนวิทย์</span></strong><small>KRU WI SCIENCE LAB</small></span></a><p>เพราะวิทยาศาสตร์อยู่รอบตัวเรา<br>มาเรียนรู้และค้นพบไปด้วยกัน ✨</p></div><div class="footer-links"><strong>สำรวจเว็บไซต์</strong><a href="#lessons">บทเรียนวิทยาศาสตร์</a><a href="#lab">ห้องทดลอง</a><a href="#quiz">แบบทดสอบ</a><a href="#onet">ติว O-NET ม.3</a><a href="#worksheets">ใบงานฝึกทักษะ</a><a href="teacher.html">เครื่องมือครู: จัดการคลังข้อสอบ</a></div><div class="footer-message"><strong>ข้อความจากครูวิ 💚</strong><p>“อย่าหยุดตั้งคำถาม เพราะความอยากรู้อยากเห็นคือพลังของนักวิทยาศาสตร์ตัวน้อย”</p></div></div><div class="container footer-bottom"><span>© <span id="currentYear"></span> ครูวิ สอนวิทย์ • Made with 💚 for curious minds</span><span>เรียนรู้ • ทดลอง • ค้นพบ</span></div></footer>
+
+  <div id="modalBackdrop" class="modal-backdrop" hidden></div>
+  <section class="modal" id="contentModal" role="dialog" aria-modal="true" aria-label="รายละเอียดเนื้อหา" aria-hidden="true" hidden><div class="modal-shell"><button class="modal-close icon-button" id="modalClose" type="button" aria-label="ปิดหน้าต่าง"><svg class="i"><use href="#icon-close"/></svg></button><div id="modalContent" class="modal-body"></div></div></section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div id="worksheetPrint" class="worksheet-print"></div>
+</body>
+</html>

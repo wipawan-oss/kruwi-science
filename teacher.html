@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#112b53">
+  <meta name="description" content="เครื่องมือครูวิ สำหรับเตรียมและส่งออกคลังข้อฝึก O-NET วิทยาศาสตร์ ม.3">
+  <title>เครื่องมือสำหรับครู | ครูวิ สอนวิทย์</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="teacher.css">
+  <script defer src="onet-bank.js"></script>
+  <script defer src="teacher.js"></script>
+</head>
+<body>
+  <header class="teacher-header"><div class="container header-inner"><a class="logo" href="index.html#home"><span class="logo-symbol">⚗</span><span><strong>ครูวิ สอนวิทย์</strong><small>KRU WI SCIENCE LAB</small></span></a><a class="back-link" href="index.html#onet">← กลับหน้าเว็บนักเรียน</a></div></header>
+  <main class="container">
+    <div class="hero"><div class="hero-tag">TEACHER WORKSPACE · O-NET M.3</div><h1>จัดการคลังข้อฝึก <span>วิทยาศาสตร์ ม.3</span></h1><p>เพิ่ม แก้ไข ลบ และตรวจความครบถ้วนของโจทย์ แล้วส่งออกไฟล์สำหรับอัปเดตเว็บไซต์บน GitHub ได้ด้วยตัวเอง</p><div class="hero-orbs" aria-hidden="true"><span>🧬</span><span>🔬</span><span>🌍</span></div></div>
+    <div class="notice" role="note"><strong>🔐 ข้อควรรู้เกี่ยวกับความปลอดภัย:</strong> หน้านี้เป็น <strong>เครื่องมือแก้ไขไฟล์ในเบราว์เซอร์</strong> ไม่ใช่ระบบผู้ดูแลที่มีการล็อกอินหรือฐานข้อมูลกลาง ผู้เข้าชมเว็บที่เปิดหน้านี้ก็สามารถแก้สำเนาในเครื่องตนเองได้ แต่การเปลี่ยนแปลงจะ <strong>ไม่ขึ้นเว็บนักเรียน</strong> จนกว่าผู้มีสิทธิ์ GitHub จะนำไฟล์ที่ส่งออกไปแทน <code>onet-bank.js</code> ใน Repository</div>
+    <section class="stats" aria-label="จำนวนข้อฝึก"><div class="stat"><span>ข้อฝึกทั้งหมด</span><strong id="totalCount">0</strong><small>ข้อ</small></div><div class="stat"><span>ชีวภาพ</span><strong id="lifeCount">0</strong><small>ข้อ</small></div><div class="stat"><span>กายภาพ</span><strong id="physicalCount">0</strong><small>ข้อ</small></div><div class="stat"><span>โลกและอวกาศ</span><strong id="earthCount">0</strong><small>ข้อ</small></div><div class="stat"><span>เทคโนโลยี</span><strong id="technologyCount">0</strong><small>ข้อ</small></div></section>
+    <div class="tools"><div class="tools-label"><h2>เครื่องมือคลังโจทย์</h2><p>ข้อมูลร่างจะบันทึกเฉพาะเบราว์เซอร์เครื่องนี้</p></div><div class="tools-actions"><button type="button" class="button ghost" id="importBtn">📥 นำเข้า JSON</button><input type="file" id="importFile" accept=".json,application/json" hidden><button type="button" class="button ghost" id="exportJson">ส่งออก JSON</button><button type="button" class="button primary" id="exportJs">⬇ ดาวน์โหลด onet-bank.js</button></div></div>
+    <div class="workspace">
+      <section class="panel list-panel" aria-label="รายการข้อสอบ"><div class="panel-heading"><div><h2>รายการโจทย์</h2><small id="filterSummary">48 ข้อ</small></div><button type="button" class="button mini" id="addQuestion">+ เพิ่มข้อใหม่</button></div><div class="filters"><label class="search-field">🔎 <input id="searchQuestion" type="search" placeholder="ค้นหาคำถามหรือเฉลย..."></label><label><span class="sr-only">กรองสาระ</span><select id="topicFilter"><option value="all">ทุกสาระ</option><option value="life">วิทยาศาสตร์ชีวภาพ</option><option value="physical">วิทยาศาสตร์กายภาพ</option><option value="earth">โลกและอวกาศ</option><option value="technology">เทคโนโลยี</option></select></label></div><div id="questionList" class="question-list" aria-live="polite"></div></section>
+      <section class="panel editor-panel" aria-label="แก้ไขข้อสอบ"><div class="panel-heading"><div><h2 id="editTitle">แก้ไขข้อฝึก</h2><small>คำถามแบบปรนัย 4 ตัวเลือก พร้อมคำอธิบาย</small></div><span class="editing-pill" id="editStatus">ข้อที่ 1</span></div>
+        <form id="editForm"><label class="form-row">สาระการเรียนรู้<select name="topic" id="editTopic" required><option value="life">วิทยาศาสตร์ชีวภาพ</option><option value="physical">วิทยาศาสตร์กายภาพ</option><option value="earth">โลกและอวกาศ</option><option value="technology">เทคโนโลยีและกระบวนการ</option></select></label><label class="form-row">คำถาม<textarea id="editQuestion" name="question" rows="4" placeholder="เขียนโจทย์ให้ชัดเจน..." required maxlength="1500"></textarea></label><div class="choices-title">ตัวเลือกคำตอบ</div><div class="choice-fields"><label class="form-row">ก. <input id="choice0" required maxlength="500"></label><label class="form-row">ข. <input id="choice1" required maxlength="500"></label><label class="form-row">ค. <input id="choice2" required maxlength="500"></label><label class="form-row">ง. <input id="choice3" required maxlength="500"></label></div><label class="form-row">ตัวเลือกที่ถูกต้อง<select id="editCorrect" required><option value="0">ก.</option><option value="1">ข.</option><option value="2">ค.</option><option value="3">ง.</option></select></label><label class="form-row">คำอธิบาย / แนวคิดการแก้โจทย์<textarea id="editExplanation" rows="4" placeholder="อธิบายว่าทำไมจึงถูกต้อง..." required maxlength="2000"></textarea></label><div class="form-actions"><button type="submit" class="button primary">💾 บันทึกฉบับร่าง</button><button type="button" class="button danger" id="deleteQuestion">ลบข้อฝึก</button></div></form><p id="editorHint" class="editor-hint" role="status" aria-live="polite"></p></section>
+    </div>
+    <section class="help"><h2>วิธีเผยแพร่ข้อสอบที่แก้ไขแล้ว</h2><ol><li>แก้ไขโจทย์ในหน้านี้ แล้วคลิก <strong>บันทึกฉบับร่าง</strong> ทุกครั้ง</li><li>คลิก <strong>ดาวน์โหลด onet-bank.js</strong> เพื่อรับไฟล์คลังโจทย์ล่าสุด</li><li>เข้า GitHub Repository ของเว็บไซต์ครูวิ เปิดไฟล์ <code>onet-bank.js</code> แล้วแทนเนื้อหาด้วยไฟล์ที่ดาวน์โหลด (หรืออัปโหลดทับผ่าน Git)</li><li>Commit การแก้ไขลงสาขา <code>main</code> — Cloudflare Pages จะเผยแพร่เว็บใหม่ตามการตั้งค่าการเชื่อม Git</li></ol><p>การแก้ข้อมูลบนหน้านี้เพียงอย่างเดียวไม่เปลี่ยนข้อสอบของนักเรียน และไม่มีการเก็บข้อมูลนักเรียนในระบบนี้</p><button type="button" id="resetBank" class="reset-button">↺ ยกเลิกร่างทั้งหมด และใช้คลังจากเว็บไซต์ที่เผยแพร่อยู่</button></section>
+  </main>
+  <footer>ครูวิ สอนวิทย์ · เครื่องมือจัดการไฟล์สำหรับครู · <a href="index.html">เปิดหน้าเว็บนักเรียน</a></footer>
+</body>
+</html>
